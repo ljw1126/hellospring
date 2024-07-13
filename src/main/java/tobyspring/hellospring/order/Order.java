@@ -46,4 +46,13 @@ public class Order {
     public BigDecimal getTotal() {
         return total;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", no='" + no + '\'' +
+                ", total=" + total +
+                '}';
+    }
 }
