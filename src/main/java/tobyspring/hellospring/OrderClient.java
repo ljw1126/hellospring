@@ -10,9 +10,9 @@ import java.math.BigDecimal;
 public class OrderClient {
     public static void main(String[] args) {
         BeanFactory beanFactory = new AnnotationConfigApplicationContext(OrderConfig.class);
-        OrderService service = beanFactory.getBean(OrderService.class);
+        OrderService orderService = beanFactory.getBean(OrderService.class);
 
-        Order order = service.create("100", BigDecimal.TEN);
+        Order order = orderService.create("100", BigDecimal.TEN);
         System.out.println(order);
     }
 }
