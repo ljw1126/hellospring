@@ -13,7 +13,6 @@ import org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcesso
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
-import tobyspring.hellospring.db.OrderRepository;
 
 import javax.sql.DataSource;
 
@@ -37,11 +36,6 @@ public class DBConfig {
         }});
 
         return emf;
-    }
-
-    @Bean
-    public OrderRepository orderRepository() {
-        return new OrderRepository();
     }
 
     @Bean
