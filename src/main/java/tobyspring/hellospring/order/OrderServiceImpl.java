@@ -1,6 +1,7 @@
 package tobyspring.hellospring.order;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -15,6 +16,7 @@ public class OrderServiceImpl implements OrderService {
         this.orderRepository = orderRepository;
     }
 
+    @Transactional
     @Override
     public Order create(String no, BigDecimal total) {
         Order order = new Order(no, total);
@@ -23,6 +25,7 @@ public class OrderServiceImpl implements OrderService {
         return order;
     }
 
+    @Transactional
     @Override
     public List<Order> createOrders(List<OrderedRequest> reqs) {
         return reqs.stream()
